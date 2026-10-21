@@ -1,5 +1,10 @@
-// Agrega tus MP3 aquí. El archivo debe existir dentro de la carpeta "musica".
-// Ejemplo: { titulo: "Mi sesión", archivo: "musica/mi-sesion.mp3" }
+
 const canciones = [
-  // { titulo: "Mi primera sesión", archivo: "musica/mi-sesion.mp3" },
+  {
+    titulo: "Bel Ami Night Club Orizaba 2005 Live",
+    tipo: "mixcloud",
+    archivo: "",
+    mixcloud: "https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fandymachuka%2Fbel-ami-nigth-club-orizaba-2005-live%2F&utm_medium=share&utm_source=embed&utm_content=show&utm_term=VXNlcjo1NTc1MjUzNg%3D%3D"
+  }
 ];
+
