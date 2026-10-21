@@ -33,7 +33,9 @@ a {
   text-decoration: none;
 }
 
-button, input, audio {
+button,
+input,
+audio {
   font: inherit;
 }
 
@@ -52,7 +54,9 @@ button, input, audio {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg,rgba(3,4,8,.82),rgba(3,4,8,.35) 55%,rgba(3,4,8,.2)),linear-gradient(0deg,rgba(4,5,9,.8),transparent 32%,rgba(4,5,9,.22));
+  background:
+    linear-gradient(90deg, rgba(3,4,8,.82), rgba(3,4,8,.35) 55%, rgba(3,4,8,.2)),
+    linear-gradient(0deg, rgba(4,5,9,.8), transparent 32%, rgba(4,5,9,.22));
 }
 
 .topbar {
@@ -73,11 +77,18 @@ button, input, audio {
   text-transform: uppercase;
 }
 
-.brand span, h1 span, .section-heading h2 span {
+.brand span,
+h1 span,
+.section-heading h2 span {
   color: var(--amber);
 }
 
-.nav-link, .eyebrow, .primary-button, .hero-bottom, .track-count, .back-top {
+.nav-link,
+.eyebrow,
+.primary-button,
+.hero-bottom,
+.track-count,
+.back-top {
   font-size: .76rem;
   font-weight: 800;
   letter-spacing: .13em;
@@ -137,7 +148,7 @@ h1 {
   color: #15100a;
   padding: 16px 22px;
   border-radius: 3px;
-  transition: transform .2s,background .2s;
+  transition: transform .2s, background .2s;
 }
 
 .primary-button:hover {
@@ -205,6 +216,7 @@ h1 {
   position: relative;
   margin-top: 25px;
   padding: 24px;
+  width: 100%;
   max-width: 650px;
   overflow: hidden;
   background:
@@ -243,12 +255,14 @@ h1 {
   letter-spacing: .13em;
 }
 
-.whatsapp-title {
+.whatsapp-title,
+.whatsapp-heading h3 {
   margin: 0;
   color: var(--text);
-  font-size: clamp(.95rem, 2vw, 1.15rem);
+  font-size: clamp(.95rem,2vw,1.15rem);
   font-weight: 800;
   line-height: 1.5;
+  font-style: italic;
 }
 
 .whatsapp-copy {
@@ -289,9 +303,10 @@ h1 {
   letter-spacing: .12em;
 }
 
+/* Mensaje cuando todavía no hay grabaciones */
 .notice {
   border: 1px dashed rgba(255,174,34,.35);
-  background: linear-gradient(135deg,rgba(255,174,34,.06),rgba(8,124,255,.04));
+  background: linear-gradient(135deg, rgba(255,174,34,.06), rgba(8,124,255,.04));
   padding: 42px 24px;
   text-align: center;
   border-radius: 8px;
@@ -325,6 +340,7 @@ code {
   border-radius: 4px;
 }
 
+/* Lista de sesiones y grabaciones */
 .track-list {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
@@ -376,12 +392,13 @@ code {
 }
 
 .track audio {
-  grid-column: 1/-1;
+  grid-column: 1 / -1;
   width: 100%;
   height: 38px;
   accent-color: var(--amber);
 }
 
+/* Pie de página */
 footer {
   border-top: 1px solid var(--line);
   display: flex;
@@ -404,6 +421,7 @@ footer {
   font-size: .68rem;
 }
 
+/* Adaptación para teléfonos y pantallas pequeñas */
 @media (max-width:700px) {
   .hero {
     min-height: 88svh;
@@ -411,7 +429,9 @@ footer {
   }
 
   .hero-shade {
-    background: linear-gradient(90deg,rgba(3,4,8,.8),rgba(3,4,8,.35)),linear-gradient(0deg,rgba(4,5,9,.85),transparent 55%);
+    background:
+      linear-gradient(90deg, rgba(3,4,8,.8), rgba(3,4,8,.35)),
+      linear-gradient(0deg, rgba(4,5,9,.85), transparent 55%);
   }
 
   .topbar {
@@ -450,6 +470,25 @@ footer {
     gap: 12px;
   }
 
+  .whatsapp-invite {
+    padding: 18px;
+  }
+
+  .whatsapp-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .whatsapp-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .whatsapp-link {
+    width: 100%;
+  }
+
   .track-list {
     grid-template-columns: 1fr;
   }
@@ -473,24 +512,5 @@ footer {
     order: 3;
     width: 100%;
     margin: 0;
-  }
-
-  .whatsapp-invite {
-    padding: 18px;
-  }
-
-  .whatsapp-heading {
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .whatsapp-icon {
-    flex-basis: 40px;
-    width: 40px;
-    height: 40px;
-  }
-
-  .whatsapp-link {
-    width: 100%;
   }
 }
