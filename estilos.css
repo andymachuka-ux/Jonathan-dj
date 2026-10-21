@@ -1,4 +1,5 @@
-/* JONATHAN DJ: tipografía unificada, inspirada en el rótulo metálico del fondo */
+
+/* JONATHAN DJ: identidad visual */
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -199,34 +200,62 @@ h1 {
   padding-bottom: 6px;
 }
 
-/* Invitación de WhatsApp */
+/* Recuadro promocional de WhatsApp */
 .whatsapp-invite {
-  margin-top: 24px;
-  padding: 20px 22px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 174, 34, .055),
-    rgba(8, 124, 255, .035)
-  );
-  border: 1px solid var(--line);
+  position: relative;
+  margin-top: 25px;
+  padding: 24px;
+  max-width: 650px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at top left, rgba(255,174,34,.09), transparent 65%),
+    linear-gradient(135deg, #0e1118, #08090d);
+  border: 1px solid rgba(255,174,34,.3);
   border-left: 3px solid var(--amber);
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.2);
+}
+
+.whatsapp-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.whatsapp-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: rgba(255,174,34,.1);
+  border: 1px solid rgba(255,174,34,.2);
+  color: var(--amber);
+  font-size: 1.8rem;
+}
+
+.whatsapp-kicker {
+  margin: 0 0 7px;
+  color: var(--amber);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .13em;
 }
 
 .whatsapp-title {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--text);
-  font-size: .95rem;
+  font-size: clamp(.95rem, 2vw, 1.15rem);
   font-weight: 800;
-  letter-spacing: .06em;
   line-height: 1.5;
 }
 
 .whatsapp-copy {
-  margin: 0 0 16px;
+  margin: 18px 0;
   color: var(--muted);
   font-size: .9rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .whatsapp-link {
@@ -234,19 +263,30 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 17px;
-  border-radius: 3px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 4px;
   background: #187c53;
   color: #fff;
-  font-size: .75rem;
+  font-size: .76rem;
   font-weight: 800;
-  letter-spacing: .07em;
-  transition: background .2s, transform .2s;
+  letter-spacing: .055em;
+  text-align: center;
+  transition: background .2s, transform .2s, box-shadow .2s;
 }
 
 .whatsapp-link:hover {
   background: #209965;
   transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(24,124,83,.22);
+}
+
+.whatsapp-signature {
+  margin: 18px 0 0;
+  color: #777f8d;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .12em;
 }
 
 .notice {
@@ -436,12 +476,21 @@ footer {
   }
 
   .whatsapp-invite {
-    padding: 17px;
+    padding: 18px;
+  }
+
+  .whatsapp-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .whatsapp-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
   }
 
   .whatsapp-link {
     width: 100%;
-    text-align: center;
   }
 }
-
