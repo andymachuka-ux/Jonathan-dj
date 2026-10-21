@@ -1,0 +1,23 @@
+JONATHAN DJ — sitio web local
+
+CONTENIDO
+- index.html: página principal.
+- estilos.css: diseño adaptable a escritorio y móvil.
+- canciones.js: lista de MP3 que aparecerán en el catálogo.
+- assets/fondo-jonathan-dj.png: fondo del estudio con el nombre JONATHAN DJ.
+- musica/: coloca aquí tus archivos MP3.
+
+AÑADIR UNA CANCIÓN
+1. Copia un MP3 dentro de la carpeta musica/.
+2. Abre canciones.js con un editor de texto.
+3. Añade un objeto dentro del arreglo canciones, por ejemplo:
+   { titulo: "Sesión de prueba", archivo: "musica/sesion-de-prueba.mp3" }
+4. Guarda el archivo y recarga la página.
+
+IMPORTANTE
+- La página no incluye canciones con derechos ni publica nada automáticamente.
+- Para probarla, abre index.html en Firefox o Chrome.
+- Para que otras personas la escuchen por Internet, después habrá que publicarla en un alojamiento web y revisar los derechos de las grabaciones.
+- Google Fonts usa Internet para cargar la tipografía; el resto del diseño y la imagen están incluidos localmente.
+
+La carpeta assets/referencia-diseno.png contiene la referencia visual aprobada para el estilo tipográfico y el catálogo.

@@ -1,0 +1,75 @@
+/* JONATHAN DJ: tipografía unificada, inspirada en el rótulo metálico del fondo */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #050609;
+  --panel: #0a0c11;
+  --text: #f1f3f7;
+  --muted: #aab1bd;
+  --amber: #ffae22;
+  --blue: #087cff;
+  --line: rgba(190, 205, 228, .2);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Oxanium', 'Arial Narrow', sans-serif; font-weight: 500; }
+a { color: inherit; text-decoration: none; }
+button, input, audio { font: inherit; }
+.hero {
+  min-height: 94svh; position: relative; isolation: isolate; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: #07080c url("assets/fondo-jonathan-dj.png") center center / cover no-repeat;
+}
+.hero-shade { position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(3,4,8,.82),rgba(3,4,8,.35) 55%,rgba(3,4,8,.2)),linear-gradient(0deg,rgba(4,5,9,.8),transparent 32%,rgba(4,5,9,.22)); }
+.topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:26px clamp(20px,6vw,88px); border-bottom:1px solid rgba(255,255,255,.13); background:rgba(3,4,8,.56); }
+.brand { font-size:clamp(1.1rem,2.5vw,1.75rem); font-weight:800; font-style:italic; letter-spacing:.035em; text-transform:uppercase; }
+.brand span, h1 span, .section-heading h2 span { color:var(--amber); }
+.nav-link, .eyebrow, .primary-button, .hero-bottom, .track-count, .back-top { font-size:.76rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.nav-link span { color:var(--amber); margin-left:8px; }
+.hero-content { width:min(1100px,100%); padding:70px clamp(22px,8vw,120px) 95px; }
+.eyebrow { color:var(--amber); letter-spacing:.19em; }
+.live-dot { display:inline-block; width:7px; height:7px; background:var(--amber); border-radius:50%; margin-right:9px; box-shadow:0 0 14px var(--amber); }
+h1 { font-size:clamp(3.7rem,10vw,9.5rem); font-weight:800; font-style:italic; line-height:.9; letter-spacing:-.045em; text-transform:uppercase; margin:22px 0; text-shadow:0 4px 28px #000; }
+.hero-copy { font-size:clamp(1rem,2vw,1.35rem); font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#e0e0e5; margin:26px 0 34px; }
+.primary-button { display:inline-flex; align-items:center; gap:13px; background:var(--amber); color:#15100a; padding:16px 22px; border-radius:3px; transition:transform .2s,background .2s; }
+.primary-button:hover { transform:translateY(-2px); background:#ffd080; }
+.hero-bottom { display:flex; justify-content:space-between; gap:20px; padding:20px clamp(20px,6vw,88px); color:#c2c3ca; border-top:1px solid rgba(255,255,255,.13); font-size:.65rem; }
+.scroll-note span { color:var(--amber); margin-left:8px; }
+.section-wrap { width:min(1500px,calc(100% - 56px)); margin:0 auto; }
+.catalog { padding-top:52px; padding-bottom:100px; }
+.section-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:25px; margin-bottom:32px; }
+.section-heading h2 { font-size:clamp(2rem,4vw,3.6rem); font-weight:800; font-style:italic; letter-spacing:-.025em; text-transform:uppercase; margin:13px 0; }
+.muted { color:var(--muted); margin-bottom:0; letter-spacing:.045em; }
+.track-count { color:var(--muted); font-size:.68rem; white-space:nowrap; padding-bottom:6px; }
+.notice { border:1px dashed rgba(255,174,34,.35); background:linear-gradient(135deg,rgba(255,174,34,.06),rgba(8,124,255,.04)); padding:42px 24px; text-align:center; border-radius:8px; }
+.notice-icon { color:var(--amber); font-size:2rem; }
+.notice h3 { margin:12px 0 8px; font-size:1.25rem; font-weight:800; font-style:italic; text-transform:uppercase; }
+.notice p { color:var(--muted); max-width:600px; margin:0 auto; line-height:1.7; font-size:.9rem; }
+code { color:#ffd18b; background:#242027; padding:3px 6px; border-radius:4px; }
+.track-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.track { display:grid; grid-template-columns:68px minmax(0,1fr); align-items:center; gap:14px; padding:16px; background:linear-gradient(135deg,#0d1017,#07080b); border:1px solid var(--line); border-radius:8px; }
+.track-art { width:68px; height:68px; border-radius:5px; display:grid; place-items:center; background:linear-gradient(135deg,#132c4c,#17151c 55%,#6b3e13); color:var(--amber); font-size:1.7rem; }
+.track-info { min-width:0; }
+.track-title { margin:0 0 5px; font-size:1rem; font-weight:800; font-style:italic; letter-spacing:.025em; text-transform:uppercase; overflow-wrap:anywhere; }
+.track-subtitle { color:var(--muted); font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+.track audio { grid-column:1/-1; width:100%; height:38px; accent-color:var(--amber); }
+footer { border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:20px; padding:26px clamp(20px,6vw,88px); color:var(--muted); font-size:.75rem; letter-spacing:.07em; text-transform:uppercase; }
+.footer-brand { color:var(--text); }
+.back-top { color:var(--amber); font-size:.68rem; }
+@media(max-width:700px) {
+ .hero { min-height:88svh; background-position:57% center; }
+ .hero-shade { background:linear-gradient(90deg,rgba(3,4,8,.8),rgba(3,4,8,.35)),linear-gradient(0deg,rgba(4,5,9,.85),transparent 55%); }
+ .topbar { padding:20px; }
+ .hero-content { padding:60px 22px 85px; }
+ h1 { font-size:clamp(3.3rem,16vw,6rem); }
+ .hero-bottom { padding:17px 20px; font-size:.55rem; }
+ .scroll-note { text-align:right; }
+ .section-wrap { width:calc(100% - 32px); }
+ .catalog { padding-top:42px; padding-bottom:70px; }
+ .section-heading { align-items:flex-start; flex-direction:column; gap:12px; }
+ .track-list { grid-template-columns:1fr; }
+ .track { grid-template-columns:54px minmax(0,1fr); gap:12px; padding:12px; }
+ .track-art { width:54px; height:54px; }
+ footer { flex-wrap:wrap; }
+ footer p { order:3; width:100%; margin:0; }
+}
