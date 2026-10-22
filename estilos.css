@@ -83,6 +83,15 @@ h1 span,
   color: var(--amber);
 }
 
+/* Colores del título principal */
+h1 .de-title {
+  color: #fff;
+}
+
+h1 .andy-title {
+  color: var(--amber);
+}
+
 .nav-link,
 .eyebrow,
 .primary-button,
