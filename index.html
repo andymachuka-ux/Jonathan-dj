@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
 <head>
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090d">
   <meta name="description" content="Escucha las sesiones y grabaciones de JONATHAN DJ.">
-  <title>JONATHAN DJ | Estudio de audio</title>
+  <title>LA ROCKOLA DE ANDY</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -15,17 +16,20 @@
       <a class="brand" href="#inicio">JONATHAN<span> DJ</span></a>
       <a class="nav-link" href="#catalogo">ESCUCHAR <span aria-hidden="true">↘</span></a>
     </nav>
+
     <div class="hero-content">
       <p class="eyebrow"><span class="live-dot"></span> SONIDO · ENERGÍA · EXPERIENCIA</p>
-      <h1>JONATHAN <span>DJ</span></h1>
+      <h1>LA ROCKOLA <span class="de-title">DE</span> <span class="andy-title">ANDY</span></h1>
       <p class="hero-copy">El sonido que conecta contigo.</p>
       <a class="primary-button" href="#catalogo"><span aria-hidden="true">▶</span> EXPLORAR GRABACIONES</a>
     </div>
+
     <div class="hero-bottom">
       <span>ESTUDIO DE AUDIO</span>
       <span class="scroll-note">DESLIZA PARA DESCUBRIR <span aria-hidden="true">↓</span></span>
     </div>
   </header>
+
   <main>
     <section class="catalog section-wrap" id="catalogo">
       <div class="section-heading">
@@ -33,6 +37,7 @@
           <p class="eyebrow">LA COLECCIÓN</p>
           <h2>Escucha <span>el sonido.</span></h2>
           <p class="muted">Sesiones y grabaciones seleccionadas.</p>
+
           <div class="whatsapp-invite">
             <div class="whatsapp-heading">
               <div class="whatsapp-icon" aria-hidden="true">♫</div>
@@ -41,9 +46,11 @@
                 <h3>¿QUIERES ESCUCHAR EL TRACK COMPLETO?</h3>
               </div>
             </div>
+
             <p class="whatsapp-copy">
               Escríbeme por WhatsApp y solicita la sesión completa.
             </p>
+
             <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;">
               <a
                 class="whatsapp-link"
@@ -56,6 +63,7 @@
                 SOLICITAR POR WHATSAPP
                 <span aria-hidden="true">↗</span>
               </a>
+
               <a
                 href="https://www.tiktok.com/@jonathan_total_music?_r=1&_t=ZS-9Akv9hWPqqK"
                 target="_blank"
@@ -68,24 +76,30 @@
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
+
             <p class="whatsapp-signature">JONATHAN DJ · LA MÚSICA CONTINÚA</p>
           </div>
         </div>
+
         <div class="track-count" id="track-count">0 GRABACIONES</div>
       </div>
+
       <div class="notice" id="empty-state">
         <div class="notice-icon" aria-hidden="true">♫</div>
         <h3>Prepara el sonido</h3>
         <p>Aún no hay MP3 en el catálogo. Coloca tus archivos en la carpeta <code>musica</code> y agrégalos en <code>canciones.js</code>.</p>
       </div>
+
       <div class="track-list" id="track-list" aria-live="polite"></div>
     </section>
   </main>
+
   <footer>
     <a class="brand footer-brand" href="#inicio">JONATHAN<span> DJ</span></a>
     <p>Hecho para disfrutar el sonido.</p>
     <a class="back-top" href="#inicio">VOLVER ARRIBA ↑</a>
   </footer>
+
   <script src="canciones.js"></script>
   <script src="app.js"></script>
 </body>
