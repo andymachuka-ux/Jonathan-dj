@@ -1,4 +1,3 @@
-
 const lista = document.getElementById("track-list");
 const vacio = document.getElementById("empty-state");
 const contador = document.getElementById("track-count");
@@ -70,16 +69,67 @@ function esCancionValida(cancion) {
   return Boolean(cancion.archivo);
 }
 
-const cancionesValidas = Array.isArray(canciones)
-  ? canciones.filter(esCancionValida)
-  : [];
+function convertirSesionMixcloud(sesion) {
+  if (!sesion || !sesion.name || !sesion.key) {
+    return null;
+  }
 
-lista.replaceChildren();
+  return {
+    titulo: sesion.name,
+    tipo: "mixcloud",
+    archivo: "",
+    mixcloud:
+      "https://player-widget.mixcloud.com/widget/iframe/?feed=" +
+      encodeURIComponent(sesion.key)
+  };
+}
 
-cancionesValidas.forEach((cancion, indice) => {
-  lista.appendChild(crearPista(cancion, indice));
-});
+function mostrarCanciones(cancionesParaMostrar) {
+  const cancionesValidas = Array.isArray(cancionesParaMostrar)
+    ? cancionesParaMostrar.filter(esCancionValida)
+    : [];
 
-contador.textContent = String(cancionesValidas.length);
-vacio.hidden = cancionesValidas.length > 0;
+  lista.replaceChildren();
 
+  cancionesValidas.forEach((cancion, indice) => {
+    lista.appendChild(crearPista(cancion, indice));
+  });
+
+  contador.textContent = String(cancionesValidas.length);
+  vacio.hidden = cancionesValidas.length > 0;
+}
+
+async function cargarSesionesMixcloud() {
+  const cancionesLocales = Array.isArray(canciones) ? canciones : [];
+
+  try {
+    const respuesta = await fetch(
+      "https://api.mixcloud.com/andymachuka/cloudcasts/?limit=20",
+      { headers: { Accept: "application/json" } }
+    );
+
+    if (!respuesta.ok) {
+      throw new Error("La API de Mixcloud respondió con un error.");
+    }
+
+    const datos = await respuesta.json();
+    const sesiones = Array.isArray(datos.data)
+      ? datos.data.map(convertirSesionMixcloud).filter(Boolean)
+      : [];
+
+    if (sesiones.length > 0) {
+      mostrarCanciones(sesiones);
+      return;
+    }
+
+    throw new Error("Mixcloud no devolvió sesiones para mostrar.");
+  } catch (error) {
+    console.warn(
+      "No se pudieron actualizar las sesiones desde Mixcloud. Se mostrarán las sesiones locales.",
+      error
+    );
+    mostrarCanciones(cancionesLocales);
+  }
+}
+
+cargarSesionesMixcloud();
